@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accueil - Whistleblowing</title>
+  <link rel="stylesheet" href="index_css.css">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet">
+
+<body>
+  <div class="page-header">
+    <div class="header-overlay">
+      <div class="header-left">
+        <img src="images/logwhite.png" alt="Logo Baobab" class="logo-image">
+      </div>
+      <div class="header-center">
+        <h1 class="header-title">Remontée Whistleblowing</h1>
+      </div>
+      <div class="header-right">
+        <p class="header-subtitle">Baobab Group</p>
+        <a class="header-link" href="https://www.baobab.com" target="_blank">www.baobab.com</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-container">
+    <div class="lang-slide-toggle" style="display: flex; justify-content: flex-end; margin-bottom: 20px;">
+  <input type="checkbox" id="toggle-lang">
+  <label for="toggle-lang" class="toggle-label">
+    <span class="toggle-fr">FR</span>
+    <span class="toggle-slider"></span>
+    <span class="toggle-en">EN</span>
+  </label>
+</div>
+
+<header style="margin-top: -20px;">
+  <h1>Bienvenue sur notre plateforme</h1>
+  <p class="subtitle" style="font-weight: bold; font-size: 1.2em; color: #6A1FA0; text-align: center; margin-top: 10px;">
+    Exprimez-vous en toute confiance et en toute sécurité
+  </p>
+  <p class="policy-link" style="text-align: center; font-size: 0.95em; margin-top: 10px;">
+    Cliquez sur ce <a href="https://docs.google.com/document/d/1-MhN2P4KPSyBbyfYnNZWtpJjbfNesHprcy7WbWW5mik/edit?tab=t.0" target="_blank" style="color: #6A1FA0; font-weight: bold; text-decoration: underline;">lien</a> pour lire la politique.
+  </p>
+    </header>
+
+    <div class="flag-banner" id="flagBanner">
+      <img src="images/flags/bbsn.png" alt="Sénégal" style="--flag-order: 0;">
+      <img src="images/flags/bbml.png" alt="Mali" style="--flag-order: 1;">
+      <img src="images/flags/bbci.png" alt="Côte d'Ivoire" style="--flag-order: 2;">
+      <img src="images/flags/bbng.png" alt="Niger" style="--flag-order: 3;">
+      <img src="images/flags/bbbf.png" alt="Burkina Faso" style="--flag-order: 4;">
+      <img src="images/flags/bbch.png" alt="Tchad" style="--flag-order: 5;">
+      <img src="images/flags/bbrdc.png" alt="RD Congo" style="--flag-order: 6;">
+      <img src="images/flags/bbmg.png" alt="Madagascar" style="--flag-order: 7;">
+      <img src="images/flags/holding.png" alt="Holding" style="--flag-order: 8;">
+    </div>
+
+    <section class="consent-section">
+      <p>
+        Je consens à la collecte et au traitement de mes données personnelles conformément<br>à la politique de confidentialité et de protection des données à caractère personnel du Groupe BAOBAB.
+      </p>
+      <div class="consent-checkbox">
+        <input type="checkbox" id="consentement" required>
+        <label for="consentement">J'accepte les conditions</label>
+      </div>
+    </section>
+
+    <footer>
+      <a href="accueil.html" class="cta-button continue-button" onclick="return document.getElementById('consentement').checked;">Continuer</a>
+      <p>&copy; 2025 Whistleblowing Initiative</p>
+    </footer>
+  </div>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const flagBanner = document.getElementById('flagBanner');
+    const flags = flagBanner.querySelectorAll('img');
+    let state = 'down';
+
+    setInterval(() => {
+      flags.forEach((flag, i) => {
+        flag.style.animation = state === 'down'
+          ? `fall 0.8s ease forwards ${i * 0.1}s`
+          : `rise 0.8s ease forwards ${i * 0.1}s`;
+      });
+      state = state === 'down' ? 'up' : 'down';
+    }, 3000);
+  });
+</script>
+<script>
+  document.getElementById('toggle-lang').addEventListener('change', function() {
+    const lang = this.checked ? 'en' : 'fr';
+    const gtFrame = document.createElement('iframe');
+    gtFrame.style.display = 'none';
+    gtFrame.src = `https://translate.google.com/translate?hl=${lang}&sl=auto&tl=${lang}&u=${window.location.href}`;
+    document.body.appendChild(gtFrame);
+  });
+</script>
+</body>
+</html>
+
+

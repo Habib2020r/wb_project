@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire Whistleblowing</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet">
+</head>
+<body>
+
+
+
+  <!-- En-tête similaire à index.html -->
+  <div class="page-header">
+    <div class="header-overlay">
+      <div class="header-left">
+        <img src="images/logwhite.png" alt="Logo Baobab" class="logo-image">
+      </div>
+      <div class="header-center">
+        <h1 class="header-title">Formulaire Whistleblowing</h1>
+      </div>
+      <div class="header-right">
+        <p class="header-subtitle">Baobab Group</p>
+        <a class="header-link" href="https://www.baobab.com" target="_blank">www.baobab.com</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Conteneur principal similaire à index.html -->
+  <div class="main-container" style="overflow-y: auto;">
+    <h2 class="form-title">Formulaire Whistleblowing</h2>
+    <form id="whistleblowing-form" method="POST" action="https://script.google.com/macros/s/AKfycbySVUkS2GwnSAW1n5-iYks2HVLnG-tFZnkUbonoGgAEuh-P7ZistPgwnUumqByvFmkhow/exec">
+      <label for="anonymat">Souhaitez-vous rester anonyme ?
+        <span style="cursor: pointer;" title="Baobab s'engage à garantir votre anonymat.">ℹ️</span>
+    </label><br>
+    
+    <select id="anonymat" name="anonymat" required>
+        <option value="">-- Sélectionner --</option>
+        <option value="oui">Oui</option>
+        <option value="non">Non</option>
+    </select>
+
+        <div id="details" class="hidden">
+          <h3>Veuillez remplir vos informations :</h3>
+      
+          <div class="field-container">
+              <label for="nomprenom">Nom & Prénom</label>
+              <input type="text" id="nomprenom" name="nomprenom" />
+          </div>
+      
+          <div class="field-container">
+              <label for="adresse">Localisation / Adresse</label>
+              <select id="adresse" name="adresse" required>
+                  <option value="">-- Sélectionner --</option>
+                  <option value="Holiding">Holding</option>
+                  <option value="Services">Services</option>
+                  <option value="Senegal">Senegal</option>
+                  <option value="Mali">Mali</option>
+                  <option value="Burkina Faso">Burkina Faso</option>
+                  <option value="Côte d'Ivoire">Côte d'Ivoire</option>
+                  <option value="Madagascar">Madagascar</option>
+                  <option value="Nigeria">Nigeria</option>
+                  <option value="RD Congo">RD Congo</option>
+              </select>         
+          </div>
+      
+          <div class="field-container">
+              <label for="fonction">Fonction</label>
+              <input type="text" id="fonction" name="fonction" />
+          </div>
+      
+          <div class="field-container">
+              <label for="entiteRattachement">Entité à laquelle vous êtes rattaché</label>
+              <input type="text" id="entiteRattachement" name="entiteRattachement" />
+          </div>
+
+          <div class="field-container">
+              <label for="contact-details">Veuillez indiquer un mail ou un numéro de téléphone</label>
+              <input type="text" id="contact-details" name="contact-details" required>
+            </div>
+      </div>
+       
+        <div class="field-container">
+            <label for="entite">A qui souhaitez-vous envoyer cette alerte ?</label>
+            <select id="entite" name="entite" required>
+                <option value="">-- Sélectionner --</option>
+                <option value="risque">Risque</option>
+                <option value="conformite">Conformité</option>
+                <option value="rh">RH</option>
+            </select>
+         </div>
+    </div>
+
+<!-- Contenus conditionnels -->
+<div id="section-risque" class="section hidden">
+    <!-- Ici va tout le contenu Risque -->
+        <label for="typeRisque">Sélectionnez le type de risque</label>
+        <select id="typeRisque" name="typeRisque">
+          <option value="">-- Sélectionner --</option>
+          <option value="detournementActifsFinanciers">Détournement d'actifs financiers</option>
+          <option value="detournementActifsPhysiques">Détournement d'actifs physiques</option>
+          <option value="corruptionDetails">Corruption et comportements non éthiques</option>
+        </select>
+      </div>
+  
+      <!-- Détournement d'actifs financiers -->
+      <div id="detournementActifsFinanciersDetails" class="hidden">
+        <p>Sélectionnez la situation pertinente :</p>
+        <div class="radio-group">
+          <label><input type="radio" name="situation" value="volEscroquerie"> S’agit-il d’un vol, escroquerie, extorsion et détournement de fonds de la clientèle ?</label>
+          <label><input type="radio" name="situation" value="volDepot"> S’agit-il d’un vol de dépôt (détournement de caisse) ?</label>
+          <label><input type="radio" name="situation" value="commissionsFrauduleuses"> S’agit-il de pratique de Commissions frauduleuses avoirs Baobab ?</label>
+          <label><input type="radio" name="situation" value="gratificationsIndues"> S’agit-il de gratifications indues (Commissions, bonus, heures supplémentaires indus) ?</label>
+          <label><input type="radio" name="situation" value="montagesFrauduleux"> S’agit-il de montages frauduleux ou fictifs de dossier de crédit ?</label>
+          <label><input type="radio" name="situation" value="manipulationComptes"> S’agit-il de manipulations des comptes et états financiers ?</label>
+          <label><input type="radio" name="situation" value="decaissements"> S’agit-il de décaissements frauduleux de crédit ?</label>
+          <label><input type="radio" name="situation" value="annulationTransactions"> S’agit-il d’annulation frauduleuse de transactions ?</label>
+          <label><input type="radio" name="situation" value="fraudeFinancement"> S’agit-il de fraude au financement de crédit (Fausse paternité) ?</label>
+          <label><input type="radio" name="situation" value="faussesOperations"> S’agit-il de créations de fausses opérations (transfert fictif, crédit fictif, versement fictif, remise de chèque fictive, dépôts frauduleux ou fictifs sur les comptes) ?</label>
+          <label><input type="radio" name="situation" value="dissimulation"> S’agit-il de dissimulation volontaire de position ?</label>
+          <label><input type="radio" name="situation" value="transactionsNonNotifiees"> S’agit-il de transactions non notifiées intentionnellement ?</label>
+          <label><input type="radio" name="situation" value="transfertsFrauduleux"> S’agit-il de transferts frauduleux de compte Baobab vers application (Exemple : OM, Wave, My baobab, etc.) ?</label>
+          <label><input type="radio" name="situation" value="traficDevises"> S’agit-il de trafic de devises ?</label>
+        </div>
+      </div>
+  
+      <!-- Détournement d'actifs physiques -->
+      <div id="detournementActifsPhysiquesDetails" class="hidden">
+        <p>Sélectionnez la situation pertinente :</p>
+        <div class="radio-group">
+          <label><input type="radio" name="situation" value="fraudeGaranties"> S’agit-il de fraude sur les garanties, déclaration d’une activité fictive ou déclaration d’activité qui appartint à autrui pour se faire financer ou financer un crédit ?</label>
+          <label><input type="radio" name="situation" value="abusBiensSociaux"> S’agit-il d’abus de biens sociaux ?</label>
+          <label><input type="radio" name="situation" value="contrefaconDocuments"> S’agit-il de contrefaçon des documents ?</label>
+          <label><input type="radio" name="situation" value="falsificationMoyensPaiement"> S’agit-il de falsification de moyens de paiement (abus de blanc-seing, utilisation d’un instrument de paiement perdu ou volé, utilisation des identifications d’une carte par une autre personne que le titulaire, falsification, contrefaçon d’une carte…) ?</label>
+          <label><input type="radio" name="situation" value="falsificationFacture"> S’agit-il de falsification de facture ?</label>
+          <label><input type="radio" name="situation" value="usurpationCompte"> S’agit-il d’usurpation de compte ?</label>
+          <label><input type="radio" name="situation" value="usurpationPouvoirSignature"> S’agit-il d’usurpation de pouvoir de signature ?</label>
+          <label><input type="radio" name="situation" value="usurpationIdentite"> S’agit-il d’usurpation d’identité ?</label>
+          <label><input type="radio" name="situation" value="malveillanceSabotage"> S’agit-il de malveillance et sabotage ?</label>
+          <label><input type="radio" name="situation" value="fraudeInformatique"> S’agit-il de fraude informatique ?</label>
+          <label><input type="radio" name="situation" value="cybercriminalite"> S’agit-il de cybercriminalité (fraudes à l’amitié, SOS Mail, phishing, faux appels aux dons, fraude à l’acompte, ransomware, Fraudes à l’achat sur internet, escroquerie au prêt ou à l’investissement, fraude au président) ?</label>
+        </div>
+      </div>
+  
+      <div id="corruptionDetails" class="hidden">
+        <p>Sélectionnez la situation pertinente :</p>
+        <div class="radio-group">
+            <label><input type="radio" name="situation" value="racketEmpruntClients"> S’agit-il de racket ou emprunt aux clients ?</label>
+            <label><input type="radio" name="situation" value="corruptionActivePassive"> S’agit-il de corruption (active ou passive) ?</label>
+            <label><input type="radio" name="situation" value="conflitsInterets"> S’agit-il de conflits d’intérêts ?</label>
+            <label><input type="radio" name="situation" value="abusPouvoir"> S’agit-il d’abus de pouvoir, activité non autorisée, délits d’initié ?</label>
+            <label><input type="radio" name="situation" value="cadeauxIllicites"> S’agit-il de cadeaux illicites ?</label>
+            <label><input type="radio" name="situation" value="manipulationAppelOffre"> S’agit-il de manipulation d’appel d’offre ?</label>
+            <label><input type="radio" name="situation" value="manipulationNormesObjectifs"> S’agit-il de manipulations frauduleuses des normes et objectifs ?</label>
+            <label><input type="radio" name="situation" value="fraudeEvasionFiscale"> S’agit-il de fraude fiscale, évasion fiscale ?</label>
+            <label><input type="radio" name="situation" value="destructionMalveillanteBiens"> S’agit-il de destruction malveillante de biens ?</label>
+        </div>
+       
+</div>
+
+<div id="section-conformite" class="section hidden">
+    <!-- Ici va tout le contenu Conformité -->
+    <div class="field-container">
+        <label for="typeConformite">De quel type d’infraction s’agit-il ?</label>
+        <select id="typeConformite" name="typeConformite">
+            <option value="">-- Sélectionner --</option>
+            <option value="corruption">Corruption</option>
+            <option value="corruptionFacturation">La corruption est-elle liée à la facturation ?</option>
+            <option value="extorsion">Extorsion économique</option>
+            <option value="collusion">Collusion</option>
+            <option value="cadeauxVoyagesLoisirs">Cadeaux, voyages, loisirs</option>
+            <option value="blanchimentArgent">Blanchiment d’argent</option>
+            <option value="signauxAlertes">Signaux d’alertes - Employés</option>
+        </select>
+    </div>
+    
+    <!-- Section Corruption -->
+    <div id="corruption" class="conformite-hidden">
+        <p>Sélectionnez la situation pertinente :</p>
+        <div class="radio-group">
+            <label><input type="radio" name="corruptionChoix" value="publiquePrivee"> Corruption publique/privée/active/passive</label><br>
+            <label><input type="radio" name="corruptionChoix" value="publiquePolitique"> Corruption publique/politique</label><br>
+            <label><input type="radio" name="corruptionChoix" value="fonctionnaire"> Un responsable politique/un fonctionnaire est-il impliqué ?</label><br>
+            <label><input type="radio" name="corruptionChoix" value="responsableBaobab"> Un responsable de Baobab est-il directement impliqué ?</label><br>
+        </div>
+    </div>
+    
+    <!-- Section Corruption Facturation -->
+    <div id="corruptionFacturation" class="conformite-hidden">
+        <p>Sélectionnez la situation pertinente :</p>
+        <div class="radio-group">
+            <label><input type="radio" name="corruptionFacturationChoix" value="surfacturation"> Un schéma de surfacturation est-il suspecté ?</label><br>
+            <label><input type="radio" name="corruptionFacturationChoix" value="sousfacturation"> Un schéma de sous-facturation est-il suspecté ?</label><br>
+            <label><input type="radio" name="corruptionFacturationChoix" value="fausseFacture"> Une fausse facture a-t-elle été émise ?</label><br>
+            <label><input type="radio" name="corruptionFacturationChoix" value="facturesProduits"> Les factures ne correspondent-elles pas aux produits ?</label><br>
+            <label><input type="radio" name="corruptionFacturationChoix" value="falsification"> Une falsification des données et/ou des comptes est-elle relevée ?</label><br>
+            <label><input type="radio" name="corruptionFacturationChoix" value="gratuites"> Des gratuités illégales sont-elles accordées au détriment d’une entreprise ?</label><br>
+            <label><input type="radio" name="corruptionFacturationChoix" value="reglementsRetard"> Des règlements de factures sont-ils systématiquement retardés ?</label><br>
+            <label><input type="radio" name="corruptionFacturationChoix" value="employesFictifs"> Des noms d’employés fictifs ont-ils été identifiés ?</label><br>
+        </div>
+    </div>
+    
+    <!-- Section Extorsion -->
+    <div id="extorsion" class="conformite-hidden">
+        <p>Sélectionnez la situation pertinente :</p>
+        <div class="radio-group">
+            <label><input type="radio" name="extorsionChoix" value="dommagesPhysiques"> Des dommages physiques sont-ils observés ?</label><br>
+            <label><input type="radio" name="extorsionChoix" value="dommagesMateriels"> Des dommages matériels sont-ils observés ?</label><br>
+            <label><input type="radio" name="extorsionChoix" value="forceMenace"> L’usage de la force ou la menace de recourir à la force a-t-il été entendu/vu ?</label><br>
+            <label><input type="radio" name="extorsionChoix" value="diffamations"> Des diffamations sont-elles relevées ?</label><br>
+            <label><input type="radio" name="extorsionChoix" value="menaces"> Des menaces et/ou des intimidations sont-elles proférées ?</label><br>
+            <label><input type="radio" name="extorsionChoix" value="pressions"> Des pressions sont-elles exercées ?</label><br>
+        </div>
+    </div>
+    
+    <!-- Section Collusion -->
+    <div id="collusion" class="conformite-hidden">
+        <p>Sélectionnez la situation pertinente :</p>
+        <div class="radio-group">
+            <label><input type="radio" name="collusionChoix" value="collaborateur"> La collusion implique-t-elle un ou plusieurs collaborateurs de Baobab ?</label><br>
+            <label><input type="radio" name="collusionChoix" value="tiers"> La collusion implique-t-elle un collaborateur de Baobab et un tiers ?</label><br>
+            <label><input type="radio" name="collusionChoix" value="potDeVin"> Un pot-de-vin/dessous de table/commission occulte a-t-il été versé ?</label><br>
+            <label><input type="radio" name="collusionChoix" value="favoritisme"> Des éléments peuvent-ils conduire à des faits de favoritisme ?</label><br>
+        </div>
+    </div>
+    
+    <!-- Section Cadeaux, Voyages, Loisirs -->
+    <div id="cadeauxVoyagesLoisirs" class="conformite-hidden">
+        <p>Sélectionnez la situation pertinente :</p>
+        <div class="radio-group">
+            <label><input type="radio" name="cadeauxVoyagesLoisirsChoix" value="cadeauxLuxueux"> Des cadeaux luxueux ont-ils été offerts/reçus ?</label><br>
+            <label><input type="radio" name="cadeauxVoyagesLoisirsChoix" value="cadeauxInappropries"> Des cadeaux inappropriés ont-ils été sollicités ?</label><br>
+            <label><input type="radio" name="cadeauxVoyagesLoisirsChoix" value="voyagesLoisirs"> Des voyages/loisirs luxueux ont-ils été offerts/reçus ?</label><br>
+        </div>
+    </div>
+    
+    <!-- Section Blanchiment d'argent -->
+    <div id="blanchimentArgent" class="conformite-hidden">
+        <p>Sélectionnez la situation pertinente :</p>
+        <div class="radio-group">
+            <label><input type="radio" name="blanchimentArgentChoix" value="paiementsEspèces"> Des paiements inhabituels en espèces ont-ils été identifiés ?</label><br>
+            <label><input type="radio" name="blanchimentArgentChoix" value="transactionsNonInteret"> Les transactions ne semblent pas être dans l’intérêt du Groupe Baobab</label><br>
+            <label><input type="radio" name="blanchimentArgentChoix" value="cheques"> Des chèques ont-ils été utilisés à des fins de corruption ou de blanchiment ?</label><br>
+            <label><input type="radio" name="blanchimentArgentChoix" value="pretViolation"> Des prêts ont-ils été octroyés en violation des politiques internes ?</label><br>
+        </div>
+    </div>
+    
+    <!-- Section Signaux d'alertes - Employés -->
+    <div id="signauxAlertes" class="conformite-hidden">
+        <p>Sélectionnez la situation pertinente :</p>
+        <div class="radio-group">
+            <label><input type="radio" name="signauxAlertesChoix" value="favoritisme"> Favoritisme inexpliqué et injustifié envers un vendeur ou une entreprise</label><br>
+            <label><input type="radio" name="signauxAlertesChoix" value="nouveauStyleDeVie"> Style de vie nouveau en contradiction avec les habitudes d’un employé</label><br>
+            <label><input type="radio" name="signauxAlertesChoix" value="conflitInteretsNonDeclare"> Non déclaration de conflit d’intérêts</label><br>
+            <label><input type="radio" name="signauxAlertesChoix" value="affaireParallele"> Un employé semble conduire une affaire en parallèle sans la déclarer</label><br>
+        </div>
+    </div>
+
+</div>
+
+<div id="section-rh" class="section hidden">
+    <!-- Ici va tout le contenu RH -->
+    <div class="field-container">
+        <label for="temoignageCommentaires">Avez-vous été témoin ou victime de commentaires répétitifs, moqueries ou critiques excessives envers un collègue ?</label>
+        <textarea id="temoignageCommentaires" name="temoignageCommentaires"></textarea>
+      </div>
+    
+      <div class="field-container">
+        <label for="remarquesDeplacees">Est-ce qu’un collègue, un supérieur, un client ou un fournisseur vous a déjà adressé des remarques déplacées ou offensantes ?</label>
+        <textarea id="remarquesDeplacees" name="remarquesDeplacees"></textarea>
+      </div>
+    
+      <div class="field-container">
+        <label for="humiliation">Vous est-il arrivé de vous sentir humilié ou dégradé par des propos ou des actions venant d’un collègue ou d’un supérieur ?</label>
+        <textarea id="humiliation" name="humiliation"></textarea>
+      </div>
+    
+      <div class="field-container">
+        <label for="gestesParolesSexuelles">Avez-vous déjà été victime de gestes ou paroles à connotation sexuelle qui vous ont mis mal à l’aise ?</label>
+        <textarea id="gestesParolesSexuelles" name="gestesParolesSexuelles"></textarea>
+      </div>
+    
+      <div class="field-container">
+        <label for="marginalisation">Vous êtes-vous sentis marginalisé ou isolé par rapport à vos collègues ?</label>
+        <textarea id="marginalisation" name="marginalisation"></textarea>
+      </div>
+    
+      <div class="field-container">
+        <label for="typeHarcèlement">Sélectionnez le type de harcèlement :</label>
+        <select id="typeHarcèlement" name="typeHarcèlement">
+          <option value="">-- Sélectionner --</option>
+          <option value="harcelement">Harcèlement</option>
+          <option value="harcelementSexuel">Harcèlement sexuel</option>
+        </select>
+      </div>
+      
+      <div id="harcelement" class="hidden">
+        <p>Sélectionnez la situation pertinente :</p>
+        <div class="radio-group">
+          <label><input type="radio" name="harcelementChoix" value="dignite"> Les comportements, paroles, actes ou gestes sont-ils hostiles ? non désirés ? Sont-ils répétés ?</label><br>
+          <label><input type="radio" name="harcelementChoix" value="dignite"> Portent-ils atteinte à la dignité ou à l’intégrité psychologique ?</label><br>
+          <label><input type="radio" name="harcelementChoix" value="nefaste"> Rendent-ils le milieu de travail néfaste ?</label><br>
+          <label><input type="radio" name="harcelementChoix" value="estime"> Dégradent-ils l’estime de soi ou causent-ils des tourments ?</label><br>
+          <label><input type="radio" name="harcelementChoix" value="origine"> Proviennent-ils d’un supérieur, collègue, client ou fournisseur ?</label><br><br>
+        </div>
+      </div> <!-- ← Fermeture manquante ici -->
+      
+      <div id="harcelementSexuel" class="hidden">
+        <p>Sélectionnez la situation pertinente :</p>
+        <div class="radio-group">
+          <label><input type="radio" name="harcelementSexuelChoix" value="avances"> S’agit-il d’avance sexuelle physique, verbale ou visuelle non désirée ?</label><br>
+          <label><input type="radio" name="harcelementSexuelChoix" value="faveurs"> Demande de faveurs sexuelles ou autre comportement à connotation sexuelle ?</label><br>
+          <label><input type="radio" name="harcelementSexuelChoix" value="commentaires"> Commentaires désobligeants, gestes, affiches, caricatures ou images offensantes ?</label><br>
+          <label><input type="radio" name="harcelementSexuelChoix" value="offensants"> Comportements offensants ou répréhensibles ?</label><br>
+          <label><input type="radio" name="harcelementSexuelChoix" value="menace"> Menace explicite ou implicite liée à l’emploi ?</label><br>
+          <label><input type="radio" name="harcelementSexuelChoix" value="environnement"> Tentative de nuire aux performances professionnelles ou créer un environnement hostile ?</label><br><br>
+        </div>
+      </div>
+    </div>
+
+    <div id="description-section" class="hidden"> 
+      <h3>Description de l'alerte</h3>
+
+      <label for="description">Merci de décrire et détailler votre alerte</label>
+      <textarea id="description" name="description" required></textarea>
+
+      <label for="entite-département">Quelle est l’entité/ le département impliqué dans le cas ?</label>
+      <input type="text" id="entite-département" name="entite-département">
+      
+
+      <label for="personnes-impliquées">Quelles sont les personnes impliquées dans cette alerte ?</label>
+      <input type="text" id="personnes-impliquees" name="personnes-impliquees" required>
+
+      <label for="lieu-temps">Où et quand cette situation/ comportement a-t-il eu lieu ?</label>
+      <input type="text" id="lieu-temps" name="lieu-temps" required>
+
+      <label for="date-connaissance">Quand avez-vous pris connaissance de cette situation ou de ce comportement ?</label>
+      <input type="date" id="date-connaissance" name="date-connaissance" required>
+
+      <label for="preuve">Existe-t-il des éléments permettant de prouver cette situation ? (documents, mails, messages...)</label>
+      <input type="text" id="preuve" name="preuve" required>
+
+      <label for="preuve-fichier">Souhaitez-vous afficher une preuve (un fichier) ?</label>
+      <input type="file" id="preuve-fichier" name="preuve-fichier">
+  </div>  
+    <button type="submit" id="submitBtn">Envoyer</button>
+    </form>
+    <script src="accueil_script.js"></script>
+</body>
+</html>

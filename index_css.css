@@ -1,0 +1,245 @@
+/* Général */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #FCE6F1, #EDE7F2);
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    color: #2c3e50;
+  }
+  
+  /* En-tête */
+  .page-header {
+    width: 100vw;
+    height: 3cm;
+    background-image: url('images/header-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  
+  .header-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    padding: 0 2cm;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  .header-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo-image {
+    height: 70px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  }
+  
+  .header-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    text-align: center;
+  }
+  
+  .header-title {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    color: white;
+  }
+  
+  .header-subtitle {
+    font-size: 1em;
+    font-weight: 600;
+    margin: 0;
+  }
+  
+  .header-link {
+    font-size: 0.85em;
+    color: #fff;
+    text-decoration: underline;
+  }
+  
+  /* Conteneur principal */
+  .main-container {
+    height: calc(100vh - 4cm);
+    width: 100vw;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.85);
+    box-sizing: border-box;
+    position: relative;
+    border: 4px solid #E40473;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  /* Sélecteur de langue (slide switch) */
+  .lang-slide-toggle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .toggle-label {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(145deg, #E40473, #6A1FA0);
+    border-radius: 30px;
+    padding: 5px;
+    position: relative;
+    width: 90px;
+    height: 40px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: background 0.3s ease;
+  }
+  
+  .toggle-label span {
+    flex: 1;
+    text-align: center;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: white;
+    z-index: 2;
+    pointer-events: none;
+  }
+  
+  .toggle-slider {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 40px;
+    height: 32px;
+    background: #fff;
+    border-radius: 26px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: left 0.3s ease;
+    z-index: 1;
+  }
+  
+  #toggle-lang {
+    display: none;
+  }
+  
+  #toggle-lang:checked + .toggle-label .toggle-slider {
+    left: 46px;
+  }
+  
+  /* Titre d'accueil */
+  header h1 {
+    font-size: 2.4em;
+    color: #E40473;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .subtitle {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #6A1FA0;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  /* Drapeaux */
+  .flag-banner {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 1cm;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1cm 0;
+    z-index: 1;
+  }
+  
+  .flag-banner img {
+    width: 100px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    opacity: 1;
+    transform: translateY(0);
+    animation-fill-mode: forwards;
+    will-change: transform, opacity;
+  }
+  
+  /* Consentement */
+  .consent-section {
+    text-align: center;
+  }
+  
+  .consent-section p {
+    font-size: 0.95em;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .consent-checkbox {
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+  
+  /* Bouton Continuer */
+  .cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #6A1FA0;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #E40473;
+    transform: scale(1.05);
+  }
+  
+  /* Pied de page */
+  footer {
+    text-align: center;
+    font-size: 0.9em;
+    color: #888;
+  }
+  
+  /* Animations */
+  @keyframes fall {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes rise {
+    0% {
+      transform: translateY(100vh);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
